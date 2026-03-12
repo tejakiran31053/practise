@@ -1,18 +1,40 @@
+import { useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import UsersTable from "./UsersTable";
 import ApiData from "./ApiData";
 
 function Dashboard(){
 
+  const [searchParams] = useSearchParams();
+
+  const tab = useMemo(() => searchParams.get("tab") || "home", [searchParams]);
+
+  const title = tab === "home"
+    ? "I am in Home Page"
+    : tab === "users"
+      ? "Registered Users"
+      : "API Data";
+
   return(
-        <div className="container">
+    <div className="container">
+
       <h2>Admin Dashboard</h2>
+      <h3>{title}</h3>
 
-      <UsersTable/>
+      {tab === "home" && (
+        <p>Welcome to admin home. Use menu links above to choose a section.</p>
+      )}
 
-      <br/>
+      {tab === "users" && <UsersTable/>}
 
-      <h3>API Data</h3>
-      <ApiData/>
+      {tab === "api" && (
+        <>
+          <br/>
+          <h3>API Data</h3>
+          <ApiData/>
+        </>
+      )}
+
     </div>
   )
 }

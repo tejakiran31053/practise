@@ -19,7 +19,7 @@ function AdminLogin(){
 
     if(login.username==="admin" && login.password==="1234"){
       
-      sessionStorage.setItem("adminLoggedIn","true");   
+      sessionStorage.setItem("adminLoggedIn","Yes, he logged in");   
 
       navigate("/dashboard");
     }else{
