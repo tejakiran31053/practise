@@ -5,7 +5,7 @@ import AdminNavbar from "./components/AdminNavbar";
 import Register from "./components/Register";
 import AdminLogin from "./components/AdminLogin";
 import Dashboard from "./components/Dashboard";
-import "./style.css";
+import "./Style.css";
 
 function App() {
 
