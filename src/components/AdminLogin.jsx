@@ -17,7 +17,7 @@ function AdminLogin(){
   const handleSubmit = (e)=>{
     e.preventDefault();
 
-    if(login.username==="admin" && login.password==="123"){
+    if(login.username==="admin" && login.password==="1234"){
       
       sessionStorage.setItem("adminLoggedIn","true");   
 
