@@ -22,7 +22,7 @@ function Dashboard(){
       <h3>{title}</h3>
 
       {tab === "home" && (
-        <p>Welcome to admin home. Use menu links above to choose a section.</p>
+        <p>You are in admin home.</p>
       )}
 
       {tab === "users" && <UsersTable/>}
